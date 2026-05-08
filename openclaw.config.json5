@@ -1,0 +1,58 @@
+{
+  "agents": {
+    "defaults": {
+      "model": "openrouter/meta-llama/llama-3.2-3b-instruct:free",
+      "workspace": "e:\\OpenClaw Hackathon\\empty-workspace"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "bouncer-token-123"
+    },
+    "port": 18791,
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18791",
+        "http://127.0.0.1:18791"
+      ]
+    }
+  },
+  "skills": {
+    "entries": {
+      "bouncer": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "google": {
+        "enabled": false
+      },
+      "webhooks": {
+        "enabled": true,
+        "config": {
+          "routes": {
+            "intent": {
+              "path": "/plugins/webhooks/intent",
+              "sessionKey": "agent:main:bouncer",
+              "secret": "bouncer-secret-123"
+            },
+            "notification": {
+              "path": "/plugins/webhooks/notification",
+              "sessionKey": "agent:main:bouncer",
+              "secret": "bouncer-secret-123"
+            }
+          }
+        }
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.5.4",
+    "lastTouchedAt": "2026-05-06T20:37:23.890Z"
+  }
+}

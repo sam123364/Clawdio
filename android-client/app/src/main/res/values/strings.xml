@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bouncer</string>
+    <string name="simulate_instagram">Simulate Instagram</string>
+    <string name="get_summary">Get Summary</string>
+</resources>
